@@ -1,11 +1,11 @@
 import { observable, action } from 'mobx';
 
 class HudStore {
-    @observable isVisible = false;
-    @observable message = undefined;
+    @observable isVisible : boolean = false;
+    @observable message : string | undefined;
 
     @action.bound
-    show(message){
+    show(message : string){
         this.isVisible = true;
         this.message = message;
     }

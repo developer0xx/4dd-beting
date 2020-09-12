@@ -3,6 +3,8 @@ import React from 'react';
 import {Platform} from "react-native";
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {StoreProvider} from './StoresContext';
+import DropDownAlert from '@/components/DropDownAlert';
+import LoadingHud from '@/components/hud';
 
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
@@ -19,10 +21,12 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        {/*<StoreProvider>*/}
+        <StoreProvider>
           <Navigation colorScheme={colorScheme}/>
           <StatusBar style={'light'}/>
-        {/*</StoreProvider>*/}
+          <DropDownAlert/>
+          <LoadingHud/>
+        </StoreProvider>
       </SafeAreaProvider>
     );
   }

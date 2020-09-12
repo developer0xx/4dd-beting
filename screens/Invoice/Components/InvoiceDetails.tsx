@@ -8,7 +8,7 @@ const InvoiceDetails = (props:any) => {
     <Title>Dwyane Clark</Title>
     <Title>Invoice #122333</Title>
     <KeyText title='Round' text='25'/>
-    <KeyText title='Date' text='29/06/2020'/>
+    <KeyText title='Date' text='30/08/2020'/>
     <KeyText title='Time' text='15:32:00'/>
   </Container>
 };

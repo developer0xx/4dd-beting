@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {HudStore} from './stores'
+import {HudStore, AlertStore} from './stores'
 
 const store = {
-  hud: new HudStore()
+  hud: new HudStore(),
+  alert: new AlertStore(),
 }
 
 const StoresContext = React.createContext(store);

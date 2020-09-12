@@ -21,11 +21,11 @@ export default function Home() {
       <Container>
         <HeaderContainer/>
         <NumberView>
-          <NumberPanel baseColor={'yellow'} title='Dialy Prizes' date='15/6/2020' data={daily_prizes}/>
-          <NumberPanel baseColor={'red'} title='Mega Jackpot' date='15/6/2020' data={daily_prizes}/>
+          <NumberPanel baseColor={'yellow'} title='Dialy Prizes' date='30/8/2020' data={daily_prizes}/>
+          <NumberPanel baseColor={'red'} title='Mega Jackpot' date='30/8/2020' data={daily_prizes}/>
         </NumberView>
         <Divider size={20}/>
-        <DetailViewPanel title='Thursday Jackpot' baseColor='rgba(0, 163, 41, 1)' date='15/6/2020'/>
+        <DetailViewPanel title='Thursday Jackpot' baseColor='rgba(0, 163, 41, 1)' date='30/8/2020'/>
         <Divider size={20}/>
       </Container>
     </SafeAreaView>

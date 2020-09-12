@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import DigitGroup from '@/screens/Home/Components/DigitGroup';
 import BorderButton from '@/screens/Home/Components/BorderButton';
 import { useNavigation } from '@react-navigation/native';
+import {useStores} from "../../hooks/Utils";
 
 export default function HeaderContainer() {
   const navigation = useNavigation();
@@ -31,11 +32,11 @@ const ImageBackgroundContainer = styled(ImageBackground)`
 `;
 const MenuIcon = styled(Ionicons)`
   position:absolute;
-  left: 10;
-  top: 5
+  left: 10px;
+  top: 5px;
 `;
 const LogoImage = styled(Image)`
-  margin-top: 10
+  margin-top: 10px
 `;
 const ButtonContainer = styled(View)`
   position: absolute;

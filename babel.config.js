@@ -21,5 +21,11 @@ module.exports = {
         },
       },
     ],
+    ['@babel/plugin-proposal-decorators', {'legacy': true}]
+    // require('@babel/plugin-proposal-decorators'),
+    // {
+    //   legacy: true,
+    //   decoratorsBeforeExport: true
+    // },
   ],
 }
