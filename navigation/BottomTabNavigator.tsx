@@ -37,6 +37,7 @@ export default function BottomTabNavigator() {
         component={Home}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-home" color={color} />,
+            tabBarVisible: false
         }}
       />
       <BottomTab.Screen

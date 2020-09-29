@@ -6,7 +6,7 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 const TotalView = (props: any) => {
   return <Container>
     <ButtonView>
-      <CustomText>Total : 24</CustomText>
+      <CustomText>Total : {props.total}</CustomText>
     </ButtonView>
   </Container>
 };

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, Image, TextInput} from "react-native";
+import {Text, View, Image, TextInput, Alert} from "react-native";
 import styled from 'styled-components/native';
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 import Images from '@/assets/Image';
@@ -7,24 +7,9 @@ import NumberCounter from '@/screens/Round/Components/NumberCounter';
 import {Divider} from "@/components/BaseUtils";
 
 const TicketTable = (props: any) => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    let temp = [];
-    for (let i = 0; i < 10; i++) {
-      temp.push( <ItemRow oddIf={i % 2 === 0} key={i} lastIf={i === 9}>
-        <SubItemRow>
-          <Number width={'30%'}>{i+1}</Number>
-          <CustomImage source={Images.icon.double_arrow}/>
-          <View style={{width: '20%'}}/>
-        </SubItemRow>
-        <NumberInput style={{width: '25%'}}/>
-        <View style={{width: '33%'}}>
-          <NumberCounter/>
-        </View>
-      </ItemRow>)
-    }
-    setItems(temp);
-  }, []);
+
+  console.log(props.items);
+
   return <Container>
     <Row>
       <HeaderText>No</HeaderText>
@@ -33,7 +18,17 @@ const TicketTable = (props: any) => {
     </Row>
     <Divider size={verticalScale(10)}/>
     <View>
-    {items}
+      {props.items.map((item, i) => (<ItemRow oddIf={i % 2 === 0} key={i} lastIf={i === 9}>
+        <SubItemRow>
+          <Number width={'30%'} >{i+1}</Number>
+          <CustomImage source={Images.icon.double_arrow}/>
+          <View style={{width: '20%'}}/>
+        </SubItemRow>
+        <NumberInput style={{width: '25%'}} onChangeText={(value) => props.handleChange(value, i)} value={item.num} keyboardType={'numeric'} maxLength={4}/>
+        <View style={{width: '33%'}}>
+          <NumberCounter setIncrease={(count) => props.onPressSetIncrease(count, i)} number={item.count}/>
+        </View>
+      </ItemRow>))}
     </View>
   </Container>
 };

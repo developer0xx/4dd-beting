@@ -1,35 +1,34 @@
 import React, {useState, useEffect} from 'react';
 import {ScrollView, Text, View, Image} from "react-native";
 import styled from 'styled-components/native';
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
+import {scale, verticalScale, moderateScale} from 'react-native-size-matters';
 import Images from '@/assets/Image';
 import {Divider} from "@/components/BaseUtils";
 
 const BettingRecord = (props: any) => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    let temp = [];
-    for (let i = 0; i < 10; i++) {
-      temp.push(<Row key={`key_${i}`} offIf={i % 2 === 0} lastIf={i===9}>
-        <HeaderText>{i+1}</HeaderText>
-        <HeaderText>123</HeaderText>
-        <HeaderText>-</HeaderText>
-        <HeaderText>12</HeaderText>
-      </Row>);
-    }
-    setItems(temp);
-  }, []);
-  return <Container>
-    <Title>Betting Record</Title>
-    <Divider size={10}/>
-    <Row>
-      <HeaderText>No</HeaderText>
-      <HeaderText>Number</HeaderText>
-      <HeaderText>B</HeaderText>
-      <HeaderText>$</HeaderText>
-    </Row>
-    {items}
-  </Container>
+    const [items, setItems] = useState([]);
+    return <Container>
+        <Title>Betting Record</Title>
+        <Divider size={10}/>
+        <Row>
+            <HeaderText>Time</HeaderText>
+            <HeaderText>P-Id</HeaderText>
+            <HeaderText>Number</HeaderText>
+            <HeaderText>$</HeaderText>
+            <HeaderText>R</HeaderText>
+        </Row>
+        <ScrollView>
+            {props.data.map((item, i) => (
+                <Row key={`key_${i}`} offIf={i % 2 === 0}>
+                    <HeaderText>{item.created_at.split(' ')[1]}</HeaderText>
+                    <HeaderText>{item.user.username}</HeaderText>
+                    <HeaderText>{item.bet_number}</HeaderText>
+                    <HeaderText>{item.bet_amount}</HeaderText>
+                        <HeaderText>{item.betting_status.description}</HeaderText>
+                </Row>
+            ))}
+        </ScrollView>
+    </Container>
 };
 
 const Container = styled(View)`
@@ -39,6 +38,7 @@ const Container = styled(View)`
   padding-vertical: 10px;
   padding-horizontal: 5px
   border-radius: 15px;
+  flex: 1;
 `;
 const Row = styled(View)`
   flex-direction: row;
@@ -49,9 +49,9 @@ const Row = styled(View)`
   border-bottom-right-radius: ${(props: any) => props.lastIf ? '10px' : '0'}
 `;
 const HeaderText = styled(Text)`
-  width: 25%
+  width: 20%
   color: #fff;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center
 `;

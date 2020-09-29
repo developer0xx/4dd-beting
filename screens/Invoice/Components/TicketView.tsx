@@ -3,20 +3,16 @@ import styled from 'styled-components/native';
 import {View, Text} from "react-native";
 import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
-const data = [
-  {ticket: 5230, amount: 12},
-  {ticket: 3233, amount: 12}
-]
 const TicketView = (props:any) => {
   return <Container>
     <Header>
       <TitleText>Ticket</TitleText>
       <TitleText>Amount</TitleText>
     </Header>
-    {data.map((item, index) => {
+    {props.data.map((item) => {
       return <RowItem>
-        <ItemText>{item.ticket}</ItemText>
-        <ItemText>{item.amount}</ItemText>
+        <ItemText>{item.num}</ItemText>
+        <ItemText>{item.count}</ItemText>
       </RowItem>
     })}
   </Container>

@@ -5,23 +5,22 @@ import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
 
 const NumberCounter = (props: any) => {
   const interval = 12
-  const [number, setNumber] = useState(0);
   const increaseNumber = () => {
-    setNumber(number => number + interval);
+    props.setIncrease(props.number + interval)
   };
   const decreaseNumber = () => {
-    if(number === 0) return;
-    setNumber(number => number - 12);
+    if(props.number === 0) return;
+    props.setIncrease(props.number - 12);
   };
   return <Container {...props}>
-    <BtnContainer onPress={increaseNumber}>
-      <SymbolText>+</SymbolText>
-    </BtnContainer>
-    <NumberView>
-      <CustomText>{number}</CustomText>
-    </NumberView>
     <BtnContainer onPress={decreaseNumber}>
       <SymbolText>-</SymbolText>
+    </BtnContainer>
+    <NumberView>
+      <CustomText>{props.number}</CustomText>
+    </NumberView>
+    <BtnContainer onPress={increaseNumber}>
+      <SymbolText>+</SymbolText>
     </BtnContainer>
   </Container>
 };

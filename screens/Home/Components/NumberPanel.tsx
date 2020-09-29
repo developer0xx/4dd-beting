@@ -22,7 +22,7 @@ const NumberPanel = (props:any) => {
           data={['Number', ...props.data.number]}
           keyExtractor={(item, index) => `number_${index}`}
           renderItem={({item}) => {
-            return <CustomText>{item}</CustomText>
+            return <CustomText>{item === 0 ? "Waiting" : item }</CustomText>
           }}/>
       </ColView>
       </NumberViewContainer>

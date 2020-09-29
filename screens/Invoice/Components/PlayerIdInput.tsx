@@ -6,7 +6,7 @@ const PlayerIdInput = (props: any) => {
   return (
     <Container>
       <CustomText>Player ID :</CustomText>
-      <InputBox/>
+      <InputBox value={props.playerId} onChangeText={(value) => props.handleChange(value)}/>
     </Container>
   )
 };
@@ -25,7 +25,7 @@ const InputBox = styled(TextInput)`
   border-width: 1px;
   border-color: rgba(200, 200, 200, 1);
   background-color: rgba(238,238,238,1)
-  padding-horizontal: 5px
+  padding-horizontal: 5px;
 `
 
 export default PlayerIdInput;

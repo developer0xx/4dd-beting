@@ -1,4 +1,5 @@
 import HudStore from './HudStore';
-import AlertStore from './AlertStore'
+import AlertStore from './AlertStore';
+import UserStore from './UserStore';
 
-export {HudStore, AlertStore};
+export {HudStore, AlertStore, UserStore};

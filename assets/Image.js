@@ -1,7 +1,8 @@
 const Images = {
   background: {
     home_background_img: require('./images/home_background_img.png'),
-    home_bg_web: require('./images/home_bg_web.png')
+    home_bg_web: require('./images/home_bg_web.png'),
+    long_bg_img: require('./images/bg-home-login.jpg')
   },
   icon: {
     logo: require('./images/4DD.png'),

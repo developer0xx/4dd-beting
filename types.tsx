@@ -3,6 +3,9 @@ export type RootStackParamList = {
   Invoice: undefined;
   Round: undefined;
   Record: undefined;
+  PlayerLogin: undefined;
+  PlayerSignup: undefined;
+  AgentLogin: undefined;
   NotFound: undefined;
 };
 

@@ -5,11 +5,11 @@ import KeyText from '@/screens/Invoice/Components/KeyText';
 
 const InvoiceDetails = (props:any) => {
   return <Container>
-    <Title>Dwyane Clark</Title>
-    <Title>Invoice #122333</Title>
-    <KeyText title='Round' text='25'/>
-    <KeyText title='Date' text='30/08/2020'/>
-    <KeyText title='Time' text='15:32:00'/>
+    <Title>{props.name}</Title>
+    <Title>Invoice #{props.invoicenumber}</Title>
+    <KeyText title='Round' text={props.round}/>
+    <KeyText title='Date' text={props.date}/>
+    <KeyText title='Time' text={props.time}/>
   </Container>
 };
 
